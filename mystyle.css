@@ -1,0 +1,201 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #323232;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* Page-specific background images */
+body.home-bg    { background-image: url('img/home-bg.jpg');    }
+body.about-bg   { background-image: url('img/about-bg.jpg');   }
+body.service-bg { background-image: url('img/service-bg.jpg'); }
+body.review-bg  { background-image: url('img/review-bg.jpg');  }
+body.contact-bg { background-image: url('img/contact-bg.jpg'); }
+
+header {
+    background-color: #323232;
+    color: #fff;
+    /* padding: 10px; */
+    text-align: center;
+}
+
+a {
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+nav {
+    background-color: #424242;
+    overflow: hidden;
+}
+
+nav a {
+    float: right;
+    display: block;
+    color: #f3f7f6;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #b67908;
+    color: #f4f0f0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;    
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.10);
+    color:black;
+    text-shadow: 
+        0 0 05px rgba(255, 255, 255,  0.4), 
+        0 0 10px rgba(255, 255, 255,  0.3), 
+        0 0 15px rgba(255, 255, 255,  0.2), 
+        0 0 20px rgba(255, 255, 255,  0.1);
+}
+
+main.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #323232;
+    color: #fff;
+    padding: 14px 16px;
+    text-align: center;    
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {font-size: 80px; }
+h2 {font-size: 50px; text-align: center; }
+p {font-size: 20px; }
+tr:nth-child(odd) { background-color: rgba(255, 255, 255,  0.10) }
+
+
+/* design gallery - begin */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;    
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;    
+    margin: 10px;        
+    border-radius: 8px;
+}
+
+    /* star rating - begin */
+    .star-rating {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .star {
+        width: 20px;
+        height: 20px;
+        background-color: #ddd;
+        clip-path: polygon(
+            50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%
+        );
+        cursor: pointer;
+        margin: 0 2px;
+    }
+    
+    .star.checked {
+        background-color: #f39c12;
+    }
+    /* star rating - end */
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+/* design gallery - begin */
+
+/* ////////////////////////////////// slide controls ///////////////////////////////////////////////////////////////////// */
+
+/* Slide Controls */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On Hover, Add a Black Background Color with a Little Bit See-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ///////////////////////////////// adding transition effect between slides /////////////////////////////////////////// */
+
+/* Fading animation */
+.fade {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4}
+    to {opacity: 1}
+}
