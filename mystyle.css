@@ -61,10 +61,10 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.10);
     color:black;
     text-shadow: 
-        0 0 05px rgba(255, 255, 255,  0.4), 
-        0 0 10px rgba(255, 255, 255,  0.3), 
-        0 0 15px rgba(255, 255, 255,  0.2), 
-        0 0 20px rgba(255, 255, 255,  0.1);
+        0 0 05px rgba(255, 255, 255,  0.50), 
+        0 0 10px rgba(255, 255, 255,  0.40), 
+        0 0 15px rgba(255, 255, 255,  0.30), 
+        0 0 20px rgba(255, 255, 255,  0.20);
 }
 
 main.content {
@@ -117,23 +117,23 @@ tr:nth-child(odd) { background-color: rgba(255, 255, 255,  0.10) }
     }
     
     .star {
-        width: 20px;
-        height: 20px;
-        background-color: #ddd;
+        width: 20px; /* Sets the width of the element */
+        height: 20px; /* Sets the height of the element */
+        background-color: #ddd; /* Sets the background color of the element */
         clip-path: polygon(
-            50% 0%,
-            61% 35%,
-            98% 35%,
-            68% 57%,
-            79% 91%,
-            50% 70%,
-            21% 91%,
-            32% 57%,
-            2% 35%,
-            39% 35%
+            50% 0%,  /* Top center */
+            61% 35%, /* Right upper inner */
+            98% 35%, /* Right outer */
+            68% 57%, /* Right middle inner */
+            79% 91%, /* Right lower outer */
+            50% 70%, /* Bottom center */
+            21% 91%, /* Left lower outer */
+            32% 57%, /* Left middle inner */
+            2% 35%,  /* Left outer */
+            39% 35%  /* Left upper inner */
         );
-        cursor: pointer;
-        margin: 0 2px;
+        cursor: pointer; /* Changes the cursor to a pointer when hovering over the element */
+        margin: 0 2px; /* Adds horizontal margin around the element */
     }
     
     .star.checked {
@@ -175,12 +175,12 @@ tr:nth-child(odd) { background-color: rgba(255, 255, 255,  0.10) }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 24px 0 0 24px; /* top-left | top-right | bottom-right | bottom-left */
 }
 
 .prev {
     left: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 0 24px 24px 0; /* top-left | top-right | bottom-right | bottom-left */
 }
 
 /* On Hover, Add a Black Background Color with a Little Bit See-through */
